@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.5.0;
 
 contract  ComputerID{
     
@@ -9,8 +9,8 @@ contract  ComputerID{
    uint Age;
    bool AgeRestriction;
    
-   function SetUserInfo(string _Computer_ID, string _ISP_Detail,string _Firewall_Name,
-   string _VPN_Name, uint _Age) public {
+   function SetUserInfo(string memory _Computer_ID, string memory _ISP_Detail,string memory _Firewall_Name,
+   string memory _VPN_Name, uint _Age) public {
        Computer_ID = _Computer_ID;
        Firewall_Name = _Firewall_Name;
        VPN_Name = _VPN_Name;
@@ -21,7 +21,7 @@ contract  ComputerID{
        else AgeRestriction = true;
    }
    
-   function GetUserInfo() public view returns (string, string,string,string, uint,bool) {
+   function GetUserInfo() public view returns (string memory, string memory,string memory,string memory, uint,bool) {
 return (Computer_ID, ISP_Detail, Firewall_Name,VPN_Name, Age, AgeRestriction);
    }
     
